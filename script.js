@@ -27,3 +27,18 @@ const quotes = ['Long-term consistency trumps short-term intensity. - Bruce Lee'
 
 console.log(quotes)
 
+function changeQuotes(){
+
+let index = 0;
+setInterval(() => {
+    console.log(quotes[index++ % quotes.length])
+}, 6000);
+
+$('<li/>', {
+    class:'updatedQuote'
+}).appendTo('footer')
+
+}
+
+changeQuotes();
+
