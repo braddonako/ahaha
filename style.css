@@ -1,0 +1,11 @@
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4em;
+}
+
+button {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+}
