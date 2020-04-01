@@ -8,6 +8,7 @@ button {
     display: block;
     max-width: 300px;
     margin: auto;
+    height: 50px;
 }
 
 .video {

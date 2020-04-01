@@ -1,0 +1,22 @@
+{
+  "name": "ahaha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braddonako/ahaha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/braddonako/ahaha/issues"
+  },
+  "homepage": "https://github.com/braddonako/ahaha#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
