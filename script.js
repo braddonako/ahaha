@@ -20,4 +20,10 @@ $('#btn').click(function(){
     console.log('click click')
 })
 
+const quotes = ['Long-term consistency trumps short-term intensity. - Bruce Lee', 
+'In a world that is changing so quickly, the biggest risk you can take is not taking any risks - Mark Cuckerberg', 
+
+]
+
+console.log(quotes)
 
