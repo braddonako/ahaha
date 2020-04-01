@@ -1,5 +1,5 @@
 console.log('check check, we are working');
 
-function ahahaVideo(){
-    
-}
+document.getElementById('btn').addEventListener('click', function(){
+    document.getElementById('hey').innerHTML = 'A HA HA'
+}, false)
