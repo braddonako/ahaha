@@ -11,6 +11,8 @@ button {
     height: 50px;
 }
 
-.video {
-    text-align: center;
+iframe {
+  margin: auto;
+  padding: 10px;
+  display: block;
 }

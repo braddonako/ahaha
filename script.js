@@ -11,11 +11,12 @@ $('#btn').click(function(){
     $("<iframe />", {
         width: "560",
         height: "315",
-        src: "https://www.youtube.com/embed/aVciLqAK4vk",
+        src: "https://www.youtube.com/embed/aVciLqAK4vk?autoplay=1",
         frameborder: "0",
         allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-        allowfullscreen
+        display: 'block'
     }).appendTo("body")
+    $('#btn').remove();
     console.log('click click')
 })
 
