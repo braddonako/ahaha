@@ -26,7 +26,7 @@ const quotes = ['Long-term consistency trumps short-term intensity. - Bruce Lee'
 ]
 
 console.log(quotes)
-
+//this function is going to change what quote is at the bottom each minute
 function changeQuotes(){
 
 let index = 0;
@@ -35,7 +35,7 @@ setInterval(() => {
     $('<li />', {
         class: 'updatedQuote',
     }).appendTo('footer')
-}, 6000);
+}, 6000); // currently using 6 second intervals for testing purposes.
 
 }
 
