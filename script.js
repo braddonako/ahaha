@@ -52,3 +52,13 @@ function currentTime(){
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
 }
+
+function updateTime(k){
+    if (k < 10){
+        return '0' + k;
+    } else {
+        return k;
+    }
+}
+
+console.log(updateTime(4))
