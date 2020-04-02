@@ -61,8 +61,6 @@ function currentTime(){
     let t = setTimeout(currentTime, 1000) // setting the timer here
 }
 
-// hour = updateTime(hour)
-
 function updateTime(k){
     if (k < 10){
         return '0' + k;
