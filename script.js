@@ -20,29 +20,6 @@ $('#btn').click(function(){
     console.log('click click')
 })
 
-
-
-// console.log(quotes)
-//this function is going to change what quote is at the bottom each minute
-function changeQuotes(){
-
-const quotes = ['Long-term consistency trumps short-term intensity. - Bruce Lee', 
-'In a world that is changing so quickly, the biggest risk you can take is not taking any risks - Mark Cuckerberg', 
-
-]
-// console.log(quotes)
-
-let index = '';
-setInterval(() => {
-    console.log(quotes[index++])
-        //  % quotes.length])
-    $('<li />', {
-        class: 'updatedQuote',
-    }).appendTo('footer')
-}, 6000); // currently using 6 second intervals for testing purposes.
-document.getElementById('updatedQuote').innerHTML = index;
-}
-
 // digital clock is going here
 
 function currentTime(){
