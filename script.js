@@ -15,7 +15,7 @@ $('#btn').click(function(){
         frameborder: "0",
         allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
         display: 'block'
-    }).appendTo("body")
+    }).appendTo(".video")
     $('#btn').remove();
     console.log('click click')
 })
@@ -51,7 +51,14 @@ function currentTime(){
     let hour = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
+    hour = updateTime(hour);
+    minutes = updateTime(minutes);
+    seconds = updateTime(seconds);
+    document.getElementById('clock').innerHTML = hour + ' : ' + minutes + ' : ' + seconds;
+    let t = setTimeout(currentTime, 1000) // setting the timer here
 }
+
+// hour = updateTime(hour)
 
 function updateTime(k){
     if (k < 10){
@@ -61,4 +68,5 @@ function updateTime(k){
     }
 }
 
-console.log(updateTime(4))
+currentTime();
+
