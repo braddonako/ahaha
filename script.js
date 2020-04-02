@@ -51,10 +51,13 @@ function currentTime(){
     let hour = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
+    let midday = "AM";
+    midday = (hour >= 12) ? 'PM' : 'AM';
+    hour = (hour == 0) ? 12 : ((hour > 12) ? hour - 1: hour)
     hour = updateTime(hour);
     minutes = updateTime(minutes);
     seconds = updateTime(seconds);
-    document.getElementById('clock').innerHTML = hour + ' : ' + minutes + ' : ' + seconds;
+    document.getElementById('clock').innerHTML = hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday;
     let t = setTimeout(currentTime, 1000) // setting the timer here
 }
 
