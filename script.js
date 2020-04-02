@@ -31,7 +31,8 @@ function changeQuotes(){
 
 let index = 0;
 setInterval(() => {
-    console.log(quotes[index++ % quotes.length])
+    console.log(quotes[index++])
+        //  % quotes.length])
     $('<li />', {
         class: 'updatedQuote',
     }).appendTo('footer')
@@ -41,3 +42,13 @@ setInterval(() => {
 
 // changeQuotes();
 
+
+// digital clock is going here
+
+function currentTime(){
+    let date = new Date();
+    console.log(date);
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+}
