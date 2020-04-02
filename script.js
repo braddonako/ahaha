@@ -53,7 +53,7 @@ function currentTime(){
     let seconds = date.getSeconds();
     let midday = "AM";
     midday = (hour >= 12) ? 'PM' : 'AM';
-    hour = (hour == 0) ? 12 : ((hour > 12) ? hour - 1: hour)
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour)
     hour = updateTime(hour);
     minutes = updateTime(minutes);
     seconds = updateTime(seconds);
