@@ -32,13 +32,12 @@ function changeQuotes(){
 let index = 0;
 setInterval(() => {
     console.log(quotes[index++ % quotes.length])
+    $('<li />', {
+        class: 'updatedQuote',
+    }).appendTo('footer')
 }, 6000);
-
-$('<li/>', {
-    class:'updatedQuote'
-}).appendTo('footer')
 
 }
 
-changeQuotes();
+// changeQuotes();
 

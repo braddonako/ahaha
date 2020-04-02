@@ -8,7 +8,8 @@ h1 {
     text-align: center;
     font-size: 7em;
     font-family: 'Spicy Rice', cursive;
-    color: rgb(40, 119, 79);
+    /* color: rgb(40, 119, 79); */
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -17,7 +18,8 @@ p {
     text-align: center;
     font-size: 25px;
     font-family: 'Spicy Rice', cursive;
-    color: rgb(40, 119, 79);
+    /* color: rgb(40, 119, 79); */
+    color: white;
     margin-bottom: 10px;
 }
 
