@@ -20,16 +20,19 @@ $('#btn').click(function(){
     console.log('click click')
 })
 
+
+
+// console.log(quotes)
+//this function is going to change what quote is at the bottom each minute
+function changeQuotes(){
+
 const quotes = ['Long-term consistency trumps short-term intensity. - Bruce Lee', 
 'In a world that is changing so quickly, the biggest risk you can take is not taking any risks - Mark Cuckerberg', 
 
 ]
+// console.log(quotes)
 
-console.log(quotes)
-//this function is going to change what quote is at the bottom each minute
-function changeQuotes(){
-
-let index = 0;
+let index = '';
 setInterval(() => {
     console.log(quotes[index++])
         //  % quotes.length])
@@ -37,11 +40,8 @@ setInterval(() => {
         class: 'updatedQuote',
     }).appendTo('footer')
 }, 6000); // currently using 6 second intervals for testing purposes.
-
+document.getElementById('updatedQuote').innerHTML = index;
 }
-
-// changeQuotes();
-
 
 // digital clock is going here
 
@@ -70,4 +70,31 @@ function updateTime(k){
 }
 
 currentTime();
+// changeQuotes();
 
+// modal stuff
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
