@@ -59,12 +59,12 @@ function currentDate(){
 let todosList = [];
 
 function toggleCheckbox(){
-    if ($('.task-item').hasClass('done')){
-        $('.task-item').removeClass('done');
+    console.log('click click')
+    if ($('.task-item')){
+        $('.task-item').addClass('done');
     } else {
-        $($('.task-item').addClass('done'))
+        $($('.task-item done').removeClass('done'))
     }
-     
 }
 
 
