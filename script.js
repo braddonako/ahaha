@@ -58,15 +58,6 @@ function currentDate(){
 
 let todosList = [];
 
-// function toggleCheckbox(){
-//     console.log('click click')
-//     if ($('.task-item')){
-//         $('.task-item').addClass('done');
-//     } else {
-//         $($('.task-item done').removeClass('done'))
-//     }
-// }
-
 $('.txtb').on('keyup', function(e){
     //13 is equal to enter button
     if (e.keyCode == 13 && $('.txtb').val() != ""){
