@@ -56,12 +56,18 @@ function currentDate(){
     document.getElementById('hey').innerHTML = date;
 }
 
+// this is going to be the array that localstorage will hold for the list
 let todosList = [];
+
+localStorage.setItem('todos', JSON.stringify(todosList));
+const data = JSON.parse(localStorage.getItem('todos'));
 
 $('.txtb').on('keyup', function(e){
     //13 is equal to enter button
     if (e.keyCode == 13 && $('.txtb').val() != ""){
         let task = $(`<div class='task'></div>`).text($('.txtb').val());
+        //saving task to the local storage here
+
         // allows user to remove the task when clicking trashcan icon
         let del = $(` <svg class="bi bi-trash" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path
