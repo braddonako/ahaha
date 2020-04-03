@@ -59,8 +59,16 @@ function currentDate(){
 let todosList = [];
 
 function toggleCheckbox(){
-    console.log('click click')
+    if ($('.task-item').hasClass('done')){
+        $('.task-item').removeClass('done');
+    } else {
+        $($('.task-item').addClass('done'))
+    }
+     
 }
+
+
+
 
 currentTime();
 currentDate();
