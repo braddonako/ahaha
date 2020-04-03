@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/braddonako/ahaha#readme",
   "dependencies": {
+    "bootstrap": "^3.4.1",
     "jquery": "^3.4.1"
   }
 }

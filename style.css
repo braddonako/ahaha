@@ -127,6 +127,11 @@ input.task-input:active {
     color: #ddd;
 }
 
+table.table tbody tr td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 }
 
 
