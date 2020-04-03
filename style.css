@@ -84,3 +84,11 @@ iframe {
 }
 }
 
+
+
+/* form */
+input.tast-input {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+}

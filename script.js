@@ -68,7 +68,18 @@ function addToDo(text){
     console.log(todosList)
 }
 
-const form = document.querySelector('#exampleModal')
+const form = document.querySelector('#addClass')
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  const input = document.querySelector('.js-todo-input');
+
+  const text = input.value.trim();
+  if (text !== '') {
+    addTodo(text);
+    input.value = '';
+    input.focus();
+  }
+});
 
 
 currentTime();

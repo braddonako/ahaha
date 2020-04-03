@@ -14,7 +14,7 @@
     <section class='header'>
         <!-- <h2 class='myBtn'>Todo list</h2> -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        todo list
+        Create new Task
     </button>
     
     <!-- Modal -->
@@ -29,10 +29,37 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <!-- <form>
+                        <div class='form-group'>
+                            <label for='' class='control-label'>Enter your task</label>
+                            <input type='text' class='form-control input-lg'>
+                        </div>
+                    </form> -->
+                    <div class="panel panel-default">
+                        <table class="table">
+                            <thread>
+                                <td>
+                                    <input type='checkbox' name='check_all' id='check-all'>
+                                </td>
+                                <td>
+                                    <input type='' placeholder='Enter new task' class='task-input'>
+                                </td>
+                            </thread>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="check-item">
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id='addTask' class="btn btn-primary">Add task</button>
+                    <!-- <button type="button" id='addTask' class="btn btn-primary">Add task</button> -->
                     <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
