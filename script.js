@@ -67,6 +67,8 @@ function toggleCheckbox(){
     }
 }
 
+$('.text-input')
+
 
 
 
