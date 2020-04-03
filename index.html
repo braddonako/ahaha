@@ -34,7 +34,7 @@
 
                     <!-- THIS IS WHERE THE TODO CUSTOM STYLING STARTS -->
                     <div class="container"> 
-                        <input type='text' class='txtb' placeholder="Add a Task">
+                        <input type='text' class='txtb' placeholder="Add a Task - Press enter to submit">
                             <div class="notCompleted">
                                 <h3>Not Completed</h3>
                                 <div class='task'>
@@ -121,18 +121,7 @@ crossorigin="anonymous"></script>
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
 crossorigin="anonymous"></script>
 <!-- MY JS FILE -->
-<script src='script.js'>
-$('.txtb').on('keyup', function(e){
-//13 is equal to enter button
-if (e.keycode == 13 && $('.txtb').val() != ''){
-alert('ok')
-let task = $("<div class='task'></div>").text($('.txtb').val());
-$('.notComplete').append(task);
-$('.text-input').val('')
-}
-})
-</script>
-
+<script src='script.js'></script>
 
 
 </html>

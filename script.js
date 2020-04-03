@@ -71,9 +71,12 @@ $('.txtb').on('keyup', function(e){
     //13 is equal to enter button
     if (e.keyCode == 13 && $('.txtb').val() != ""){
         let task = $(`<div class='task'></div>`).text($('.txtb').val());
-        $('.notCompleted').append(task)
+        $('.notCompleted').append(task);
+
+        //clear the input
+        $('.txtb').val('')
     }
-    console.log('enter has been clicked')
+    // console.log('enter has been clicked')
 
 })
 
