@@ -56,9 +56,30 @@ input.task-input:active {
     outline: none;
 }
 
+table.table tbody tr td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .done {
     text-decoration: line-through;
     color: #ddd;
+}
+
+.task-item {
+    position: relative;
+}
+
+
+/* Buttons on the form/modal for adding a task */
+.row-buttons {
+    position: absolute;
+    height: 20px;
+    width: 40px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    /* display: none; */
 }
 
 /* Media Queries */
@@ -130,6 +151,20 @@ input.task-input:active {
 table.table tbody tr td {
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.task-item {
+    position: relative;
+}
+
+.row-buttons {
+    position: absolute;
+    height: 20px;
+    width: 80px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    display: none;
 }
 
 }
