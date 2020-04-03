@@ -58,28 +58,7 @@ function currentDate(){
 
 let todosList = [];
 
-function addToDo(text){
-    const todo = {
-        text,
-        checked: false,
-        id: Date.now()
-    }
-    todosList.push(todo)
-    console.log(todosList)
-}
 
-const form = document.querySelector('#addClass')
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  const input = document.querySelector('.js-todo-input');
-
-  const text = input.value.trim();
-  if (text !== '') {
-    addTodo(text);
-    input.value = '';
-    input.focus();
-  }
-});
 
 
 currentTime();

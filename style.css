@@ -39,6 +39,28 @@ footer {
     /* position: absolute; */
 }
 
+/* form  */
+input.task-input {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    height: 46px;
+    line-height: 1.33333;
+    color: #555;
+    display: block;
+    font-style: italic;
+}
+
+input.task-input:focus,
+input.task-input:active {
+    outline: none;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #ddd;
+}
+
 /* Media Queries */
 
 @media (min-width: 600px){
@@ -82,13 +104,30 @@ iframe {
   padding: 10px;
   display: block;
 }
-}
 
-
-
-/* form */
-input.tast-input {
+/* form  */
+input.task-input {
     width: 100%;
     border: none;
     font-size: 18px;
+    height: 46px;
+    line-height: 1.33333;
+    color: #555;
+    display: block;
+    font-style: italic;
 }
+
+input.task-input:focus,
+input.task-input:active {
+    outline: none;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #ddd;
+}
+
+}
+
+
+
