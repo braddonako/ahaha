@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Spicy Rice', cursive;
+    box-sizing: border-box;
 }
 
 body {
