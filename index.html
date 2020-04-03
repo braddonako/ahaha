@@ -121,5 +121,18 @@ crossorigin="anonymous"></script>
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
 crossorigin="anonymous"></script>
 <!-- MY JS FILE -->
-<script src='script.js'></script>
+<script src='script.js'>
+$('.txtb').on('keyup', function(e){
+//13 is equal to enter button
+if (e.keycode == 13 && $('.txtb').val() != ''){
+alert('ok')
+let task = $("<div class='task'></div>").text($('.txtb').val());
+$('.notComplete').append(task);
+$('.text-input').val('')
+}
+})
+</script>
+
+
+
 </html>

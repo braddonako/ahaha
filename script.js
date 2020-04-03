@@ -58,28 +58,28 @@ function currentDate(){
 
 let todosList = [];
 
-function toggleCheckbox(){
-    console.log('click click')
-    if ($('.task-item')){
-        $('.task-item').addClass('done');
-    } else {
-        $($('.task-item done').removeClass('done'))
-    }
-}
+// function toggleCheckbox(){
+//     console.log('click click')
+//     if ($('.task-item')){
+//         $('.task-item').addClass('done');
+//     } else {
+//         $($('.task-item done').removeClass('done'))
+//     }
+// }
 
-function addTask(){
-$('.text-input').on('keyup', function(e){
+$('.txtb').on('keyup', function(e){
     //13 is equal to enter button
-    if (e.keycode == 13 && $('.text-input').val() != ''){
-        let task = $("<td class='task-item'>").text($('.text-input').val());
-        $('.task-item').append(task);
-        $('.text-input').val('')
+    if (e.keyCode == 13 && $('.txtb').val() != ""){
+        let task = $(`<div class='task'></div>`).text($('.txtb').val());
+        $('.notCompleted').append(task)
     }
+    console.log('enter has been clicked')
+
 })
-}
 
 
 
 
+// addTask();
 currentTime();
 currentDate();
