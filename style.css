@@ -10,6 +10,19 @@
     box-sizing: border-box;
 }
 
+button {
+    height: 75px;
+    width: 150px;
+}
+
+.modal-title {
+    font-size: 3em;
+}
+
+.modal-header{
+    padding: 5px;
+}
+
 body {
     background-image: url('alberta-2297204_1920.jpg');
     background-repeat: no-repeat;
@@ -99,6 +112,7 @@ h2 {
 
 h3 {
     margin: 15px 0;
+    text-decoration: underline;
 }
 
 p {

@@ -69,15 +69,12 @@ function currentDate(){
     }
 
     function deleteFromList(){
-
+       todosList.forEach(item => todosList.pop(item, 1))
+       console.log(todosList)
     }
 
     localStorage.setItem('todos', JSON.stringify(todosList));
     const data = JSON.parse(localStorage.getItem('todos'));
-    
-    //saving task to the local storage here
-    // todosList.push(task);
-    // localStorage.setItem(task, JSON.stringify(todosList))
 
 
 $('.txtb').on('keyup', function(e){
@@ -87,7 +84,7 @@ $('.txtb').on('keyup', function(e){
         addToList();
 
         // allows user to remove the task when clicking trashcan icon
-        let del = $(` <svg class="bi bi-trash" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        let del = $(`<svg class="bi bi-trash" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
                                         <path fill-rule="evenodd"
@@ -98,6 +95,8 @@ $('.txtb').on('keyup', function(e){
                                             p.fadeOut(function(){
                                                 p.remove()
                                             })
+                                            // deleteFromList();
+                                            // console.log(todosList)
                                         });
                                         
                                         
