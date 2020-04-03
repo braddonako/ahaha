@@ -3,6 +3,12 @@
     padding-top: 10px;
 } */
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spicy Rice', cursive;
+}
+
 body {
     background-image: url('alberta-2297204_1920.jpg');
     background-repeat: no-repeat;
