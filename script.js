@@ -1,11 +1,11 @@
 console.log('check check, we are working');
 
-// document.getElementById('btn').addEventListener('click', function(){
-//     document.getElementById('hey').innerHTML = 'A HA HA'
 
-//     console.log('click')
-// }, false)
-
+//modal stuff
+$('.myBtn').click(function(){
+    console.log('click, click')
+    $('<div />').appendTo('.myBtn')
+})
 
 $('#btn').click(function(){
     $("<iframe />", {
@@ -18,10 +18,10 @@ $('#btn').click(function(){
     }).appendTo(".video")
     $('#btn').remove();
     $('#sunClicked').remove();
-    console.log('click click')
-})
+    console.log('click click');
+});
 
-// digital clock is going here
+// function grabbing the current time
 
 function currentTime(){
     let date = new Date();
@@ -47,7 +47,7 @@ function updateTime(k){
     }
 }
 
-// Going to grab the date for the header
+// creating a function to generate the current date
 
 function currentDate(){
     let today = new Date();
@@ -55,6 +55,21 @@ function currentDate(){
     console.log(date)
     document.getElementById('hey').innerHTML = date;
 }
+
+let todosList = [];
+
+function addToDo(text){
+    const todo = {
+        text,
+        checked: false,
+        id: Date.now()
+    }
+    todosList.push(todo)
+    console.log(todosList)
+}
+
+const form = document.querySelector('#exampleModal')
+
 
 currentTime();
 currentDate();
