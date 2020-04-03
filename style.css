@@ -20,13 +20,13 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
     padding: 10px;
 }
 
 .txtb {
-    width: 50%;
+    width: 100%;
     border: none;
     border-bottom: 2px solid #000;
     background: none;
@@ -35,6 +35,28 @@ body {
     font-size: 18px;
 }
 
+h3 {
+    margin: 10px 0;
+}
+
+.task {
+    padding: 18px;
+    margin: 6px 0;
+}
+
+.task svg {
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.notCompleted .task {
+    background: rgba(170, 57, 57, .3);
+}
+
+.completed .task {
+    background: rgba(42, 127, 64, .3);
+}
 #clock {
     /* font-family: 'Comic Neue', cursive;  */
     font-family: 'Spicy Rice', cursive;
