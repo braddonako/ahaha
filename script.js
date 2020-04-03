@@ -56,17 +56,35 @@ function currentDate(){
     document.getElementById('hey').innerHTML = date;
 }
 
-// this is going to be the array that localstorage will hold for the list
-let todosList = [];
+ // this is going to be the array that localstorage will hold for the list
+    let todosList = [];
+    console.log(todosList)
 
-localStorage.setItem('todos', JSON.stringify(todosList));
-const data = JSON.parse(localStorage.getItem('todos'));
+
+    // everytime a item is added to the todos modal, it will push the data into an array for local storage
+    function addToList(){
+        boxValue = $('.txtb').val();
+        todosList.push(boxValue)
+        console.log(todosList)
+    }
+
+    function deleteFromList(){
+
+    }
+
+    localStorage.setItem('todos', JSON.stringify(todosList));
+    const data = JSON.parse(localStorage.getItem('todos'));
+    
+    //saving task to the local storage here
+    // todosList.push(task);
+    // localStorage.setItem(task, JSON.stringify(todosList))
+
 
 $('.txtb').on('keyup', function(e){
     //13 is equal to enter button
     if (e.keyCode == 13 && $('.txtb').val() != ""){
         let task = $(`<div class='task'></div>`).text($('.txtb').val());
-        //saving task to the local storage here
+        addToList();
 
         // allows user to remove the task when clicking trashcan icon
         let del = $(` <svg class="bi bi-trash" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +118,7 @@ $('.txtb').on('keyup', function(e){
 
         task.append(del, check)
         $('.notCompleted').append(task);
-
+        // console.log(task)
         //clear the input
         $('.txtb').val('')
     }
