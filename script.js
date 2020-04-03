@@ -58,8 +58,9 @@ function currentDate(){
 
 let todosList = [];
 
-
-
+function toggleCheckbox(){
+    console.log('click click')
+}
 
 currentTime();
 currentDate();
