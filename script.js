@@ -17,6 +17,7 @@ $('#btn').click(function(){
         display: 'block'
     }).appendTo(".video")
     $('#btn').remove();
+    $('#sunClicked').remove();
     console.log('click click')
 })
 
@@ -24,7 +25,7 @@ $('#btn').click(function(){
 
 function currentTime(){
     let date = new Date();
-    console.log(date);
+    // console.log(date);
     let hour = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
@@ -46,5 +47,14 @@ function updateTime(k){
     }
 }
 
+// Going to grab the date for the header
+
+function currentDate(){
+    let today = new Date();
+    let date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
+    console.log(date)
+    document.getElementById('hey').innerHTML = date;
+}
+
 currentTime();
-// changeQuotes();
+currentDate();
