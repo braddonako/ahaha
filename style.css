@@ -97,8 +97,8 @@ h3 {
     color: white;
     font-size: 80px;
     text-align: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     /* position: absolute; */
 }
 
@@ -114,7 +114,8 @@ h1 {
     /* color: rgb(40, 119, 79); */
     color: white;
     margin-bottom: 10px;
-    padding-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 h2 {

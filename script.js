@@ -34,20 +34,22 @@ function currentTime() {
 // console.log(currentTime(), 'if this logs A HA HA'
 // this is not DRY --- need to figure out how to grab current time from above
 // 
+
+
 $('#btn').click(function(){
-     let date = new Date();
-     // console.log(date);
-     let hour = date.getHours();
-     let minutes = date.getMinutes();
-     let seconds = date.getSeconds();
-     console.log(hour + '.' + minutes + '.' + seconds, 'Look at this shi')
-      let midday = "AM";
-      midday = (hour >= 12) ? 'PM' : 'AM';
-      hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
-      hour = updateTime(hour);
-      minutes = updateTime(minutes);
-      seconds = updateTime(seconds);
-      console.log(hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday);
+    let date = new Date();
+    // console.log(date);
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    console.log(hour + '.' + minutes + '.' + seconds, 'Look at this shi')
+    let midday = "AM";
+    midday = (hour >= 12) ? 'PM' : 'AM';
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+    hour = updateTime(hour);
+    minutes = updateTime(minutes);
+    seconds = updateTime(seconds);
+    console.log(hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday);
     if (midday === 'AM'){
             $("<iframe />", {
                 width: "600",
@@ -73,15 +75,19 @@ $('#btn').click(function(){
         $('#sunClicked').remove();
         console.log('click clack 2')
     }
+    setTimeout(() => {
+        $('iframe').remove()
+           $('<iframe />', {
+               src: "https://giphy.com/embed/yqMtk0TfjRa5W",
+               width: "100%",
+               height: "100%",
+               frameBorder: "0",
+               class: "giphy-embed",
+               display: 'block'
+           }).appendTo('.video')
+    }, 10000);
 });
-
-
-// function updateLike(){
-//     let clicks = 0;
-//    clicks += 1;
-//    $('.updateLikes').innerHTML = clicks;
-//    console.log('click click')
-// }
+      
 
 function updateTime(k){
     if (k < 10){
@@ -170,10 +176,5 @@ $('.txtb').on('keyup', function(e){
     }
 })
 
-
-
-
-
-// addTask();
 currentTime();
 currentDate();
