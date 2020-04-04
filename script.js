@@ -48,7 +48,7 @@ $('#btn').click(function(){
       minutes = updateTime(minutes);
       seconds = updateTime(seconds);
       console.log(hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday);
-    if (midday === 'PM'){
+    if (midday === 'AM'){
             $("<iframe />", {
                 width: "600",
                 height: "355",
@@ -75,6 +75,14 @@ $('#btn').click(function(){
     }
 });
 
+
+// function updateLike(){
+//     let clicks = 0;
+//    clicks += 1;
+//    $('.updateLikes').innerHTML = clicks;
+//    console.log('click click')
+// }
+
 function updateTime(k){
     if (k < 10){
         return '0' + k;
@@ -93,22 +101,27 @@ function currentDate(){
 
  // this is going to be the array that localstorage will hold for the list
     let todosList = [];
+    const completedList = []
     console.log(todosList)
 
-    // everytime a item is added to the todos modal, it will push the data into an array for local storage
+    // everytime a item is added to the to-dos modal, it will push the data into an array for local storage
     function addToList(){
         boxValue = $('.txtb').val();
-        todosList.push(boxValue)
-        console.log(todosList)
+        todosList.push(boxValue);    
     }
 
-    function deleteFromList(){
-       todosList.forEach(item => todosList.pop(item, 1))
-       console.log(todosList)
-    }
 
-    localStorage.setItem('todos', JSON.stringify(todosList));
-    const data = JSON.parse(localStorage.getItem('todos'));
+    
+    console.log(todosList, 'this is line 107')
+
+    // // I NEED TO PUSH TODOS INTO A COMPLETED ARRAY, then they can be deleted?
+    // function deleteFromList(){
+    //    todosList.forEach(item => todosList.pop(item, 1))
+    //    console.log(todosList)
+    // }
+
+    // localStorage.setItem('todos', JSON.stringify(todosList));
+    // const data = JSON.parse(localStorage.getItem('todos'));
 
 
 $('.txtb').on('keyup', function(e){
@@ -155,9 +168,8 @@ $('.txtb').on('keyup', function(e){
         //clear the input
         $('.txtb').val('')
     }
-    // console.log('enter has been clicked')
-
 })
+
 
 
 

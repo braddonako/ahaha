@@ -9,36 +9,18 @@
     font-family: 'Spicy Rice', cursive;
     box-sizing: border-box;
 }
-/* .btn {
-    display: inline-block;
-    height:100px;
-    width: 100%;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 1.5em;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+
+.likes {
+    float: right;
+    margin-left: 30px;
+    font-size: 2em;
+    color: white;
 }
 
-.btn-primary:hover {
-    background-color: rgba(43, 67, 107, .1);
+.counter {
+    float: right;
+    font-size: 2em;
 }
-.btn-primary {
-    background-color: rgba(43, 67, 107, .0);
-} */
 
 .modal-title {
     font-size: 3em;
