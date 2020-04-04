@@ -9,7 +9,7 @@
     font-family: 'Spicy Rice', cursive;
     box-sizing: border-box;
 }
-.btn {
+/* .btn {
     display: inline-block;
     height:100px;
     width: 100%;
@@ -38,7 +38,7 @@
 }
 .btn-primary {
     background-color: rgba(43, 67, 107, .0);
-}
+} */
 
 .modal-title {
     font-size: 3em;
@@ -55,6 +55,12 @@ body {
     position: relative;
     margin-bottom: 100px;
     min-height: 100vh;
+}
+
+#sunClicked {
+    color: gold;
+    font-size: 2em;
+    font-weight: bolder;
 }
 
 .container {

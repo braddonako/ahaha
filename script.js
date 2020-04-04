@@ -7,23 +7,15 @@ $('.myBtn').click(function(){
     $('<div />').appendTo('.myBtn')
 })
 
-$('#btn').click(function(){
-    $("<iframe />", {
-        width: "600",
-        height: "355",
-        src: "https://www.youtube.com/embed/aVciLqAK4vk?autoplay=1",
-        frameborder: "0",
-        allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-        display: 'block'
-    }).appendTo(".video")
-    $('#btn').remove();
-    $('#sunClicked').remove();
-    console.log('click click');
-});
-
 // function grabbing the current time
+    let date = new Date();
+    // console.log(date);
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
 
-function currentTime(){
+
+function currentTime() {
     let date = new Date();
     // console.log(date);
     let hour = date.getHours();
@@ -31,13 +23,60 @@ function currentTime(){
     let seconds = date.getSeconds();
     let midday = "AM";
     midday = (hour >= 12) ? 'PM' : 'AM';
-    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour)
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
     hour = updateTime(hour);
     minutes = updateTime(minutes);
     seconds = updateTime(seconds);
     document.getElementById('clock').innerHTML = hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday;
     let t = setTimeout(currentTime, 1000) // setting the timer here
 }
+
+// console.log(currentTime(), 'if this logs A HA HA'
+// this is not DRY --- need to figure out how to grab current time from above
+// 
+$('#btn').click(function(){
+     let date = new Date();
+     // console.log(date);
+     let hour = date.getHours();
+     let minutes = date.getMinutes();
+     let seconds = date.getSeconds();
+     console.log(hour + '.' + minutes + '.' + seconds, 'Look at this shi')
+      let midday = "AM";
+      midday = (hour >= 12) ? 'PM' : 'AM';
+      hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+      hour = updateTime(hour);
+      minutes = updateTime(minutes);
+      seconds = updateTime(seconds);
+      console.log(hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday);
+    if (midday === 'AM'){
+            $("<iframe />", {
+                width: "600",
+                height: "355",
+                src: "https://www.youtube.com/embed/aVciLqAK4vk?autoplay=1",
+                frameborder: "0",
+                allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                display: 'block'
+            }).appendTo(".video")
+            $('#btn').remove();
+            $('#sunClicked').remove();
+            console.log('click click');
+    }  else { // this is where it will break
+        $("<iframe />", {
+            width: "600",
+            height: "355",
+            src: "https://www.youtube.com/embed/NE-sn9TljSA?autoplay=1",
+            frameborder: "0",
+            allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+            display: 'block'
+        }).appendTo(".video")
+        $('#btn').remove();
+        console.log('click clack 2')
+    }
+
+
+    });
+
+
 
 function updateTime(k){
     if (k < 10){
