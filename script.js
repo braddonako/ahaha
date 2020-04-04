@@ -79,13 +79,13 @@ $('#btn').click(function(){
         $('iframe').remove()
            $('<iframe />', {
                src: "https://giphy.com/embed/yqMtk0TfjRa5W",
-               width: "100%",
-               height: "100%",
+               width: "600",
+               height: "355",
                frameBorder: "0",
                class: "giphy-embed",
                display: 'block'
            }).appendTo('.video')
-    }, 10000);
+    }, 7500);
 });
       
 
