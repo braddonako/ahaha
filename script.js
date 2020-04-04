@@ -48,7 +48,7 @@ $('#btn').click(function(){
       minutes = updateTime(minutes);
       seconds = updateTime(seconds);
       console.log(hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday);
-    if (midday === 'AM'){
+    if (midday === 'PM'){
             $("<iframe />", {
                 width: "600",
                 height: "355",
@@ -70,13 +70,10 @@ $('#btn').click(function(){
             display: 'block'
         }).appendTo(".video")
         $('#btn').remove();
+        $('#sunClicked').remove();
         console.log('click clack 2')
     }
-
-
-    });
-
-
+});
 
 function updateTime(k){
     if (k < 10){
@@ -87,7 +84,6 @@ function updateTime(k){
 }
 
 // creating a function to generate the current date
-
 function currentDate(){
     let today = new Date();
     let date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
@@ -98,7 +94,6 @@ function currentDate(){
  // this is going to be the array that localstorage will hold for the list
     let todosList = [];
     console.log(todosList)
-
 
     // everytime a item is added to the todos modal, it will push the data into an array for local storage
     function addToList(){
