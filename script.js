@@ -31,11 +31,6 @@ function currentTime() {
     let t = setTimeout(currentTime, 1000) // setting the timer here
 }
 
-// console.log(currentTime(), 'if this logs A HA HA'
-// this is not DRY --- need to figure out how to grab current time from above
-// 
-
-
 $('#btn').click(function(){
     let date = new Date();
     // console.log(date);
@@ -85,7 +80,7 @@ $('#btn').click(function(){
                class: "giphy-embed",
                display: 'block'
            }).appendTo('.video')
-    }, 7500);
+    }, 9500);
 });
       
 
