@@ -7,14 +7,6 @@ $('.myBtn').click(function(){
     $('<div />').appendTo('.myBtn')
 })
 
-// function grabbing the current time
-    let date = new Date();
-    // console.log(date);
-    let hour = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-
 function currentTime() {
     let date = new Date();
     // console.log(date);
@@ -30,6 +22,12 @@ function currentTime() {
     document.getElementById('clock').innerHTML = hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday;
     let t = setTimeout(currentTime, 1000) // setting the timer here
 }
+//autoplay for mobile -- 
+function onPlayerReady(event) {
+    event.target.mute();
+    event.target.playVideo();
+}
+
 
 $('#btn').click(function(){
     let date = new Date();
@@ -49,15 +47,24 @@ $('#btn').click(function(){
             $("<iframe />", {
                 width: "600",
                 height: "355",
-                src: "https://www.youtube.com/embed/aVciLqAK4vk?autoplay=1",
                 frameborder: "0",
                 allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                display: 'block'
-            }).appendTo(".video")
+                display: 'block',
+                src: "https://www.youtube.com/embed/aVciLqAK4vk?autoplay=1"
+                // aVciLqAK4vk - videoId
+                // width: '100%',
+                // videoId: 'aVciLqAK4vk',
+                // playerVars: { 'autoplay': 1, 'playsinline': 1 },
+                // events: {
+                //     'onReady': onPlayerReady
+                // }
+                
+                
+            }).appendTo(".video") 
             $('#btn').remove();
             $('#sunClicked').remove();
             console.log('click click');
-    }  else { // this is where it will break
+    } else { 
         $("<iframe />", {
             width: "600",
             height: "355",
@@ -65,6 +72,12 @@ $('#btn').click(function(){
             frameborder: "0",
             allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
             display: 'block'
+            // width: '100%',
+            // videoId: 'aVciLqAK4vk',
+            // playerVars: { 'autoplay': 1, 'playsinline': 1 },
+            // events: {
+            //     'onReady': onPlayerReady
+            // }
         }).appendTo(".video")
         $('#btn').remove();
         $('#sunClicked').remove();
