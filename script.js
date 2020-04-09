@@ -22,20 +22,16 @@ function currentTime() {
     document.getElementById('clock').innerHTML = hour + ' : ' + minutes + ' : ' + seconds + ' ' + midday;
     let t = setTimeout(currentTime, 1000) // setting the timer here
 }
-//autoplay for mobile -- 
-function onPlayerReady(event) {
-    event.target.mute();
-    event.target.playVideo();
-}
 
-
+// Created a function that changes what video is playing. Different video for the morning and one for the afternoon, after 15 seconds,
+//the youtube video times out, and spongebob comes in
 $('#btn').click(function(){
     let date = new Date();
     // console.log(date);
     let hour = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    console.log(hour + '.' + minutes + '.' + seconds, 'Look at this shi')
+    // console.log(hour + '.' + minutes + '.' + seconds, 'Look at this shi')
     let midday = "AM";
     midday = (hour >= 12) ? 'PM' : 'AM';
     hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
@@ -51,15 +47,6 @@ $('#btn').click(function(){
                 allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
                 display: 'block',
                 src: "https://www.youtube.com/embed/aVciLqAK4vk?autoplay=1"
-                // aVciLqAK4vk - videoId
-                // width: '100%',
-                // videoId: 'aVciLqAK4vk',
-                // playerVars: { 'autoplay': 1, 'playsinline': 1 },
-                // events: {
-                //     'onReady': onPlayerReady
-                // }
-                
-                
             }).appendTo(".video") 
             $('#btn').remove();
             $('#sunClicked').remove();
@@ -72,12 +59,7 @@ $('#btn').click(function(){
             frameborder: "0",
             allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
             display: 'block'
-            // width: '100%',
-            // videoId: 'aVciLqAK4vk',
-            // playerVars: { 'autoplay': 1, 'playsinline': 1 },
-            // events: {
-            //     'onReady': onPlayerReady
-            // }
+    
         }).appendTo(".video")
         $('#btn').remove();
         $('#sunClicked').remove();
@@ -93,7 +75,7 @@ $('#btn').click(function(){
                class: "giphy-embed",
                display: 'block'
            }).appendTo('.video')
-    }, 11500);
+    }, 13000);
 });
       
 
@@ -109,7 +91,7 @@ function updateTime(k){
 function currentDate(){
     let today = new Date();
     let date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
-    console.log(date)
+    // console.log(date)
     document.getElementById('hey').innerHTML = date;
 }
 
@@ -118,29 +100,22 @@ function currentDate(){
     const completedList = []
     console.log(todosList)
 
+    localStorage.setItem("todos", JSON.stringify(todosList));
+    const data = JSON.parse(localStorage.getItem('todos'));
+
     // everytime a item is added to the to-dos modal, it will push the data into an array for local storage
     function addToList(){
         boxValue = $('.txtb').val();
         todosList.push(boxValue);    
+        localStorage.setItem('todos', JSON.stringify(todosList))
     }
 
-
-    
-    console.log(todosList, 'this is line 107')
-
-    // // I NEED TO PUSH TODOS INTO A COMPLETED ARRAY, then they can be deleted?
-    // function deleteFromList(){
-    //    todosList.forEach(item => todosList.pop(item, 1))
-    //    console.log(todosList)
-    // }
-
-    // localStorage.setItem('todos', JSON.stringify(todosList));
-    // const data = JSON.parse(localStorage.getItem('todos'));
+    console.log(todosList, 'todosList array')
 
 
-$('.txtb').on('keyup', function(e){
+$('.txtb').on('keyup', function (e) {
     //13 is equal to enter button
-    if (e.keyCode == 13 && $('.txtb').val() != ""){
+    if (e.keyCode == 13 && $('.txtb').val() != "") {
         let task = $(`<div class='task'></div>`).text($('.txtb').val());
         addToList();
 
@@ -151,30 +126,30 @@ $('.txtb').on('keyup', function(e){
                                         <path fill-rule="evenodd"
                                             d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
                                             clip-rule="evenodsd" />
-                                        </svg>`).click(function(){
-                                            let p = $(this).parent();
-                                            p.fadeOut(function(){
-                                                p.remove()
-                                            })
-                                            // deleteFromList();
-                                            // console.log(todosList)
-                                        });
-                                        
-                                        
+                                        </svg>`).click(function () {
+            let p = $(this).parent();
+            p.fadeOut(function () {
+                p.remove()
+            })
+            // deleteFromList();
+            // console.log(todosList)
+        });
+
+
         let check = $(`<svg class="bi bi-check" width="2em" height="2em" viewBox="0 0 16 16"
                                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
                                                 d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z"
                                                 clip-rule="evenodd" />
-                                        </svg>`).click(function(){
-                                            let p = $(this).parent();
-                                            p.fadeOut(function(){
-                                                $('.completed').append(p)
-                                                p.fadeIn();
-                                            })
-                                           $(this).remove();
-                                        });
-                                        
+                                        </svg>`).click(function () {
+            let p = $(this).parent();
+            p.fadeOut(function () {
+                $('.completed').append(p)
+                p.fadeIn();
+            })
+            $(this).remove();
+        });
+
 
         task.append(del, check)
         $('.notCompleted').append(task);

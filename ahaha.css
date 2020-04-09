@@ -10,18 +10,6 @@
     box-sizing: border-box;
 }
 
-.likes {
-    float: right;
-    margin-left: 30px;
-    font-size: 2em;
-    color: white;
-}
-
-.counter {
-    float: right;
-    font-size: 2em;
-}
-
 .modal-title {
     font-size: 3em;
 }
@@ -43,6 +31,10 @@ body {
     color: gold;
     font-size: 2em;
     font-weight: bolder;
+}
+
+.clearAll {
+    float: right;
 }
 
 .container {
